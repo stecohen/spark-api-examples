@@ -13,12 +13,7 @@ my $api_key = 'stcohen@cisco.com';
 my $api_pass = "xxxxxx";    
 my $client = REST::Client->new();
 
-open(my $SPARKB, '<', $ENV{"HOME"} . "/.spark/AUTH_BEARER") or 
-{ 
-	print "Unable to open $! \n";
-	print "make sure you copy paste your spark auth bearer from https://developer.ciscospark.com  \n";
-	die;
-}
+open(my $SPARKB, '<', $ENV{"HOME"} . "/.spark/AUTH_BEARER") or die "Unable to open $!. Make sure you copy paste your spark auth bearer from https://developer.ciscospark.com  \n";
 	
 my $AUTH_BEARER = do { local $/; <$SPARKB> };
 
